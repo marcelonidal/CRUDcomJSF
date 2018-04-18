@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<h:body>
+	<ui:composition template="/template.xhtml">
+		<ui:define name="corpo">
+			<h:form>
+				<h:outputLabel for="cpf" value="CPF:" />
+				<h:inputText id="cpf" value="#{funcionarioMB.funcionario.cpf}" />
+
+				<h:outputLabel  for="senha" value="Senha:" />
+				<h:inputSecret id="senha" value="#{funcionarioMB.funcionario.senha}" />
+
+				<h:commandButton value="Enviar" icon="ui-icon-star"
+					action="#{funcionarioMB.login}">
+				</h:commandButton>
+			</h:form>
+			<br/>
+			<h:outputText value="Ainda não é cadastrado?" ></h:outputText>
+			<h:commandLink value="Cadastre-se" action="cadastro" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
